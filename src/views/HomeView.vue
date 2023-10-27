@@ -12,7 +12,6 @@ const toggleLight = async () => {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ison: action === 'on' })
     });
     if(response.ok) {
         isLightOn.value = !isLightOn.value;
