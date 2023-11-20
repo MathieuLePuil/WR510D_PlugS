@@ -1,4 +1,4 @@
-<script setup>
+ <script setup>
 import { ref, onMounted } from 'vue';
 
 const data = ref(null);
@@ -6,7 +6,7 @@ const isLightOn = ref(false);
 
 const toggleLight = async () => {
     const action = isLightOn.value ? 'off' : 'on';
-    const url = `https://shelly-86-eu.shelly.cloud/device/relay/control?channel=0&turn=${action}&id=80646F827174&auth_key=MWRmYzM2dWlkE62C6C4C76F817CE0A3D2902F5B5D4C115E49B28CF8539114D9246505DE5D368D560D06020A92480`;
+    const url = `https://shelly-86-eu.shelly.cloud/device/relay/control?channel=0&turn=${action}&id=083A8DC30983&auth_key=MWRmYzFldWlk4D16582E43E196112886AC9F26DC326B400BAD032511CF71503DE17BDCAB0CFE03B0147A1ABA5420`;
     const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -19,7 +19,7 @@ const toggleLight = async () => {
 }
 
 onMounted(async () => {
-    const response = await fetch(`https://shelly-86-eu.shelly.cloud/device/status?id=80646F827174&auth_key=MWRmYzM2dWlkE62C6C4C76F817CE0A3D2902F5B5D4C115E49B28CF8539114D9246505DE5D368D560D06020A92480`);
+    const response = await fetch(`https://shelly-86-eu.shelly.cloud/device/status?id=083A8DC30983&auth_key=MWRmYzFldWlk4D16582E43E196112886AC9F26DC326B400BAD032511CF71503DE17BDCAB0CFE03B0147A1ABA5420`);
     data.value = await response.json();
 });
 
